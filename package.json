@@ -1,6 +1,6 @@
 {
   "name": "generator-ember-frost",
-  "version": "0.0.0",
+  "version": "0.0.2",
   "description": "Generates the scaffolding for ember apps, in compliance to frost standards.",
   "homepage": "",
   "author": {
@@ -9,8 +9,11 @@
     "url": ""
   },
   "files": [
+    "utils",
     "generators/app",
-    "generators/application"
+    "generators/application",
+    "generators/addon",
+    "generators/engine"
   ],
   "main": "generators/index.js",
   "keywords": [

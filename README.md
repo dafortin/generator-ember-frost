@@ -13,7 +13,7 @@ npm install -g generator-ember-frost
 Then generate your new project:
 
 ```bash
-yo generator-ember-frost
+yo ember-frost
 ```
 
 ## Getting To Know Yeoman
