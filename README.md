@@ -7,7 +7,7 @@ First, install [Yeoman](http://yeoman.io) and generator-generator-ember-frost us
 
 ```bash
 npm install -g yo
-npm install -g generator-generator-ember-frost
+npm install -g generator-ember-frost
 ```
 
 Then generate your new project:
