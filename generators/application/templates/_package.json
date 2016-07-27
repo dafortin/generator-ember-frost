@@ -10,13 +10,14 @@
   "scripts": {
     "build": "ember build",
     "start": "ember server",
-    "test": "ember test"
+    "test": "npm run lint && ember test",
+    "lint": "eslint *.js addon app blueprints config tests"
   },
   "repository": "",
   "engines": {
     "node": ">= 0.10.0"
   },
-  "author": "",
+  "author": "<%- name %>",
   "license": "MIT",
   "devDependencies": {
     "broccoli-asset-rev": "^2.2.0",
@@ -37,10 +38,13 @@
     "ember-cli-uglify": "^1.2.0",
     "ember-data": "^2.3.0",
     "ember-disable-proxy-controllers": "^1.0.1",
+    "ember-engines": "0.2.5",
     "ember-frost-core": "^0.13.1",
     "ember-export-application-global": "^1.0.4",
     "ember-load-initializers": "^0.5.0",
     "ember-resolver": "^2.0.3",
+    "eslint": "^3.0.1",
+    "eslint-config-frost-standard": "^3.0.0",
     "loader.js": "^4.0.0"
   }
 }

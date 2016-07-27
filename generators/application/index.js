@@ -19,10 +19,15 @@
       })
     },
     writing () {
+      this.config['name']  = this.user.git.name()
+      this.config['email'] = this.user.git.email()
       utils._processDirectory.call(this, this.config)
     },
     install () {
-      this.installDependencies()
+      this.installDependencies(() => {
+        this.log(chalk.yellow.bold('Running `ember g ember-frost-core`'))
+        this.spawnCommand('ember', ['g', 'ember-frost-core'])
+      })
     }
   });
 })(
