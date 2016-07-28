@@ -1,5 +1,5 @@
 import Engine from 'ember-engines/engine'
-import Resolver from 'ember-engines/resolver' // <=== IMPORTANT - custom resolver!!!
+import Resolver from 'ember-engines/resolver'
 import loadInitializers from 'ember-load-initializers'
 import config from './config/environment'
 

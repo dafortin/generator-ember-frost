@@ -37,15 +37,6 @@ module.exports = function (environment) {
 
     ENV.APP.rootElement = '#ember-testing'
   }
-
-  if (environment === 'pages') {
-    // Web pages are available under the following URL: /pages/<PROJECT>/<REPOSITORY>/<BRANCH-OR-TAG>
-    ENV.baseURL = '/pages/BP_UI_APPS/ciena-uac-engine/gh-pages/browse'
-    ENV.locationType = 'hash'
-    ENV['ember-cli-mirage'] = {
-      enabled: true
-    }
-  }
-
+  
   return ENV
 }

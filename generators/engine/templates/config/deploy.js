@@ -1,5 +1,4 @@
 /* jshint node: true */
-
 module.exports = function (deployTarget) {
   var ENV = {
     build: {}

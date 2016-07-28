@@ -26,7 +26,10 @@
       utils._processDirectory.call(this, this.config)
     },
     install () {
-      this.installDependencies()
+      this.installDependencies(() => {
+        this.log(chalk.yellow.bold('\tRunning Blueprints\n'))
+        this.spawnCommand('ember', ['g', 'ember-frost-core'])
+      })
     }
   });
 })(
