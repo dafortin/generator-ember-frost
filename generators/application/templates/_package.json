@@ -9,9 +9,9 @@
   },
   "scripts": {
     "build": "ember build",
-    "start": "ember server",
+    "start": "ember s",
     "test": "npm run lint && ember test",
-    "lint": "eslint *.js addon app blueprints config tests"
+    "lint": "eslint *.js addon app blueprints config tests --fix"
   },
   "repository": "",
   "engines": {
@@ -31,7 +31,7 @@
     "ember-cli-htmlbars": "^1.0.1",
     "ember-cli-htmlbars-inline-precompile": "^0.3.1",
     "ember-cli-inject-live-reload": "^1.3.1",
-    "ember-cli-qunit": "^1.2.1",
+    "ember-cli-mocha": "^0.10.0",
     "ember-cli-release": "0.2.8",
     "ember-cli-sass": "5.1.0",
     "ember-cli-sri": "^2.0.0",

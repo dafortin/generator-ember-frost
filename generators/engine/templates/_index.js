@@ -2,7 +2,7 @@ const EngineAddon = require('ember-engines/lib/engine-addon')
 const autoprefixer = require('autoprefixer')
 
 module.exports = EngineAddon.extend({
-  name: 'ciena-uac-engine',
+  name: '<%- appName %>',
   options: {
     cssModules: {
       plugins: [

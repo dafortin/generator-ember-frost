@@ -1,7 +1,7 @@
 {
-  "name": "ciena-uac-engine",
+  "name": "<%- appName %>",
   "version": "0.0.0",
-  "description": "Ciena UAC UI engine.",
+  "description": "<%- appDescription %>",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -12,11 +12,11 @@
     "lint": "stylelint **/*.scss && eslint *.js addon app config tests ",
     "test": "ember test"
   },
-  "repository": "ssh://git@bitbucket.ciena.com/bp_ui_apps/ciena-uac-engine.git",
+  "repository": "",
   "engines": {
     "node": ">= 5.0.0"
   },
-  "author": "",
+  "author": "<%- name %>",
   "license": "MIT",
   "devDependencies": {
     "broccoli-asset-rev": "^2.2.0",
