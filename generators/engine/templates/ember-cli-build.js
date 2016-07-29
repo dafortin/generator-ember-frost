@@ -7,6 +7,13 @@ module.exports = function (defaults) {
     'ember-cli-mocha': {
       useLintTree: false
     },
+    dotEnv: {
+      clientAllowedKeys: [
+        'GIT_FORCE_PUSH',
+        'WEBHOOK_URL',
+        'SLACK_CHANNEL'
+      ]
+    }
     babel: {
       optional: ['es7.decorators'],
       ignore: ['node_modules/**/*.js', 'bower_components/**/*.js']

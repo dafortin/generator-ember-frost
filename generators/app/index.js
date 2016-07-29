@@ -1,4 +1,4 @@
-;(function(yeoman, chalk, inquirer, execSync) {
+;(function(yeoman, chalk, inquirer, execSync, utils) {
   'use strict'
   module.exports = yeoman.Base.extend({
     prompting () {
@@ -31,19 +31,56 @@
           'Engine',
           new inquirer.Separator()
         ]
-      }]).then(config => {
-        this.composeWith(`ember-frost:${config.choice.toLowerCase()}`, {
-          options: config
+      }, {
+          type: 'expand',
+          message: 'Would you like to setup ember-cli-deploy?',
+          name: 'deploy',
+          choices: [{
+            key: 'y',
+            name: 'Set up ember-cli-deploy',
+            value: true
+          }, {
+            key: 'n',
+            name: `No don't do it!`,
+            value: false
+          }]
+        }]).then(config => {
+          if (config.deploy) {
+            return inquirer.prompt([{
+                type: 'input',
+                name: 'webhookURL',
+                message: ` - Slack Webhook URL:`
+              }, {
+                type: 'input',
+                name: 'slackChannel',
+                message: ' - Slack channel to post to for deployment:'
+              }
+            ]).then(answers => {
+              config['webhookURL'] = answers.webhookURL || ''
+              config['slackChannel'] = answers.slackChannel || ''
+              return config
+            })
+          }
+          return config
         })
-      });
+        .then(config => {
+          this.config = config
+          this.composeWith(`ember-frost:${config.choice.toLowerCase()}`, {
+            options: config
+          })
+      })
+    },
+    writing () {
+      utils._processDirectory.call(this, this.config)
     },
     install () {
       this.spawnCommand('git', ['init'])
     }
-  });
+  })
 })(
   require('yeoman-generator'),
   require('chalk'),
   require('inquirer'),
-  require('child_process').execSync
+  require('child_process').execSync,
+  require('../../utils')
 )

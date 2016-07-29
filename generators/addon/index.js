@@ -22,13 +22,14 @@
       this.config['name']  = this.user.git.name()
       this.config['email'] = this.user.git.email()
       this.config['emberVersion'] = this.options.emberVersion
-
+      this.config['deploy'] = this.options.deploy
       utils._processDirectory.call(this, this.config)
     },
     install () {
       this.installDependencies(() => {
         this.log(chalk.yellow.bold('\tRunning Blueprints\n'))
         this.spawnCommand('ember', ['g', 'ember-frost-core'])
+        this.spawnCommand('ember', ['g', 'ember-cli-mocha'])
       })
     }
   });
