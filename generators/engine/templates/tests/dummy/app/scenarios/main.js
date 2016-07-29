@@ -7,7 +7,5 @@ Scenario.settings({
 })
 
 export default class extends Scenario {
-  run () {
-    
-  }
+  
 }
