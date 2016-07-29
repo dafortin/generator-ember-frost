@@ -36,6 +36,9 @@
           options: config
         })
       });
+    },
+    install () {
+      this.spawnCommand('git', ['init'])
     }
   });
 })(
