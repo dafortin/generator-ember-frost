@@ -13,7 +13,7 @@ module.exports = function (defaults) {
         'WEBHOOK_URL',
         'SLACK_CHANNEL'
       ]
-    }
+    },
     babel: {
       optional: ['es7.decorators'],
       ignore: ['node_modules/**/*.js', 'bower_components/**/*.js']

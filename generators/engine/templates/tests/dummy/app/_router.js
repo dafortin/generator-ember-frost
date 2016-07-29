@@ -6,7 +6,9 @@ const Router = Ember.Router.extend({
 })
 
 Router.map(function () {
-  
+  this.mount('<%- appName %>', {
+    as: '<%- appName %>'
+  })
 })
 
 export default Router
